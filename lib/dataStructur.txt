@@ -1,0 +1,9 @@
+User -> 
+SignUp -> 
+HomePage -> 
+further registration:                   |   firebase User Collection -> Subcollection for each class ->
+- Name: Robin Fübbeker                  |   Student gets to Subcollection for Students of each class ->
+- class: 9b ->                          |   
+                                        |   Teachers can choose the class for the task they give in a dropdown menu ->
+                                        |   Task gets added to Task Subcollection for each class
+HomePage with Context for User

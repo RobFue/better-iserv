@@ -1,0 +1,15 @@
+$primaryBright: #c899fe;
+$primary: #8f73f3;
+$primaryDark: #8d65eb;
+$grey: #f4f5f9;
+
+.container {
+  height: 93vh;
+  width: 15vw;
+  padding: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

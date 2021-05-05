@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+$primaryBright: #c899fe;
+$primary: #8f73f3;
+$primaryDark: #8d65eb;
+$grey: #f4f5f9;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.react-calendar {
+  border: none !important;
+
+  button {
+    color: black;
+  }
+
+  abbr {
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "Ubuntu";
+  }
+}
+
+.react-calendar__tile--active {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+
+  abbr {
+    border-radius: 50%;
+    padding: 20px 20px;
+    position: relative;
+    background: $primary;
+    color: white;
+  }
+}

@@ -1,0 +1,77 @@
+$primaryBright: #c899fe;
+$primary: #8f73f3;
+$primaryDark: #8d65eb;
+$grey: #7d7c7c;
+
+.container {
+  height: 500px;
+  width: 1000px;
+  padding: 40px;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(192, 192, 192, 0.219);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tasksContainer::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.tasksContainer {
+  height: 100%;
+  width: 100%;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.taskContainer {
+  width: 100%;
+  height: 50px;
+  border-radius: 0.5rem;
+  margin-top: 10px;
+  background: rgb(255, 255, 255);
+  box-shadow: 5px 5px 15px rgba(192, 192, 192, 0.219);
+  display: grid;
+  grid-template-columns: 25% 10% 25% 25% 10%;
+  grid-template-rows: 50px;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+.columnNameContainer {
+  width: 90%;
+  height: 50px;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 25% 10% 25% 25% 10%;
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.columnName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.taskTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.taskText {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.checkIcon {
+  color: $primary;
+}

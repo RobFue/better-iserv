@@ -1,0 +1,18 @@
+$primaryBright: #c899fe;
+$primary: #8f73f3;
+$primaryDark: #8d65eb;
+$grey: #f4f5f9;
+
+.container {
+  height: 380px;
+  width: 380px;
+  padding: 40px;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(192, 192, 192, 0.219);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 50px;
+}

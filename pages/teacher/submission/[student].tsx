@@ -65,12 +65,20 @@ export default function Task() {
 
 
     const submitResults = () => {
+        if (!currentUser) {
+            return
+        }
+
         db.collection("classes").doc(student.class).collection("tasks").doc(taskId as string).collection("submissions").doc(student.email).update({
             feedback: feedback
         }).then(() => {
             setSubmitStatus("✔ Success")
         }).catch(() => {
             setSubmitStatus("X Error")
+        })
+
+        db.collection("students").doc(student.email).collection("notifications").doc(taskId).set({
+            text: `${currentUser.fullName} just gave feedback to your submission`,
         })
     }
 
@@ -105,7 +113,7 @@ export default function Task() {
                                         onChange={(event) => setFeedback(event.target.value)} 
                                         value={feedback}
                                     />
-                                    <p>{submitStatus && submitStatus}</p>
+                                    <p className={styles.submitStatus}>{submitStatus && submitStatus}</p>
                                     <div className={styles.submitButton} onClick={submitResults}>
                                         <AiOutlineCheck size={20} style={{ marginRight: "10px" }}/>
                                         <p style={{ marginRight: "10px" }}>Give Feedback</p>

@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "../../styles/CompletedTasks.module.scss"
 import { Doughnut } from "react-chartjs-2"
 import Loader from 'react-loader-spinner'
@@ -11,11 +11,14 @@ export default function CompletedTasks({ tasks, completedTasks }) {
     const [percentage, setPercentage] = useState(0)
 
     const getPercentage = (number1, number2) => {
-        if (number2 === 0) {
+        if (number1 === 0) {
             return 100
         }
 
         const percentage = number1 * 100 / number2
+        if (percentage > 100) {
+            return 100
+        }
         return percentage
     }
 
@@ -33,7 +36,7 @@ export default function CompletedTasks({ tasks, completedTasks }) {
     }, [tasks])
 
     useEffect(() => {
-        setPercentage(getPercentage(completed, notCompleted))
+        setPercentage(getPercentage(notCompleted, completed))
     }, [completed, notCompleted])
 
     return (
@@ -42,13 +45,14 @@ export default function CompletedTasks({ tasks, completedTasks }) {
                 <>
                     <p className={styles.percentCompleted}>{percentage}% Completed</p>
                     <Doughnut 
+                        id="doughnutChart"
                         data={{
                             datasets: [
                                 {
                                     label: 'Exercises Completed',
                                     data: [completed, notCompleted],
                                     backgroundColor: [
-                                        '#8f73f3',
+                                        "#8f73f3",
                                         '#c899fe',
                                     ],
                                     borderColor: [

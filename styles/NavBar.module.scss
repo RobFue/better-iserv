@@ -1,7 +1,8 @@
 $primaryBright: #c899fe;
+$primary50: #8f73f350;
 $primary: #8f73f3;
 $primaryDark: #8d65eb;
-$grey: #f4f5f9;
+$grey: #e7e7e7;
 
 .container {
   height: 7vh;
@@ -36,19 +37,44 @@ $grey: #f4f5f9;
   position: relative;
 }
 
-.logout {
+.dropdown {
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-85%);
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(192, 192, 192, 0.219);
+  border-radius: 1rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notificationContainer {
+  padding: 10px;
+  border-bottom: 2px solid $primary50;
+  cursor: pointer;
+}
+
+.notificationText {
   margin: 0;
   padding: 0;
-  margin-left: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  color: $primary;
 }
 
 .logoutContainer {
-  width: 100%;
-  padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   border-top: 2px solid $grey;
-  font-weight: 500;
   cursor: pointer;
+}
+
+.logoutText {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }

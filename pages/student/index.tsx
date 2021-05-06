@@ -9,6 +9,7 @@ import Calender from '../../components/StudentLayout/Calender'
 import Sidebar from '../../components/Layout/Sidebar'
 import CompletedTasks from '../../components/StudentLayout/CompletedTasks'
 import { db } from '../../lib/firebase'
+import CoronaCases from '../../components/StudentLayout/CoronaCases'
 
 export default function Home() {
     const [tasks, setTasks] = useState([])
@@ -49,7 +50,10 @@ export default function Home() {
 
                 <Sidebar />
                 <div className={styles.innerContainer}>
-                    <Tasks tasks={tasks} completedTasks={completedTasks}/>
+                    <div>
+                        <Tasks tasks={tasks} completedTasks={completedTasks}/>
+                        <CoronaCases />
+                    </div>
                     <div className={styles.rightContainer}>
                         <Calender />
                         <CompletedTasks tasks={tasks.slice(0, 10)} completedTasks={completedTasks.slice(0, 10)}/>

@@ -110,7 +110,7 @@ export default function Task() {
                                     </div>
                                     <textarea 
                                         className={formStyles.textarea}
-                                        style={{ background: "white", border: "none", maxHeight: "80%" }} 
+                                        style={{ background: "white", border: "none", maxHeight: "80%", padding: 0, marginTop: "20px" }} 
                                         readOnly
                                         onChange={(event) => setSubmission(event.target.value)} 
                                         value={feedback}
